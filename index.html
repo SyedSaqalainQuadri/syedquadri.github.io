@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Syed Saqalain Quadri | DevOps Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -19,52 +19,49 @@ html{scroll-behavior:smooth}
 body{font-family:Inter;background:var(--bg);color:#cbd5f5}
 #particles{position:fixed;inset:0;z-index:-1}
 
+/* NAV */
 nav{
  position:fixed;top:0;width:100%;
  padding:16px 60px;
  backdrop-filter:blur(14px);
- background:rgba(5,8,20,.6);
+ background:rgba(5,8,20,.7);
  display:flex;justify-content:space-between;
  z-index:100
 }
-nav a{color:#aab4d4;text-decoration:none;margin-left:24px}
+nav a{color:#aab4d4;text-decoration:none;margin-left:26px;font-size:15px}
 nav a:hover{color:var(--cyan)}
 
+/* COMMON */
 .section{padding:120px 60px}
 .gradient{
  background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));
  -webkit-background-clip:text;color:transparent
 }
 .card{
- background:rgba(11,16,34,.85);
- border-radius:18px;padding:28px;
+ background:rgba(11,16,34,.9);
+ border-radius:18px;padding:30px;
  transition:.3s
 }
 .card:hover{
  transform:translateY(-6px);
- box-shadow:0 0 35px rgba(34,211,238,.25)
+ box-shadow:0 0 40px rgba(34,211,238,.25)
 }
 .grid{
  display:grid;
- grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
- gap:30px
+ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+ gap:32px
 }
 .btn{
  padding:14px 28px;border-radius:30px;
- border:none;font-weight:600;cursor:pointer
+ font-weight:600;text-decoration:none;display:inline-block
 }
 .btn-primary{
  background:linear-gradient(90deg,var(--cyan),var(--pink));
- box-shadow:0 0 30px rgba(34,211,238,.4)
+ color:#000
 }
 .btn-outline{
- background:transparent;border:1px solid var(--cyan);
+ border:1px solid var(--cyan);
  color:var(--cyan)
-}
-.hero{
- min-height:100vh;
- display:grid;grid-template-columns:1fr 1fr;
- align-items:center
 }
 .pill{
  background:#0f172a;
@@ -73,15 +70,52 @@ nav a:hover{color:var(--cyan)}
  font-size:14px;
  color:var(--cyan)
 }
+
+/* HERO */
+.hero{
+ min-height:100vh;
+ display:grid;grid-template-columns:1.1fr .9fr;
+ align-items:center;gap:60px
+}
+.hero img{
+ width:100%;max-width:380px;
+ border-radius:26px;
+ box-shadow:0 0 40px rgba(34,211,238,.3)
+}
+
+/* EXPERIENCE */
+.timeline{
+ border-left:3px solid var(--cyan);
+ padding-left:30px
+}
+.timeline li{
+ margin-bottom:28px;
+ list-style:none
+}
+.timeline li::before{
+ content:"";
+ width:14px;height:14px;
+ background:var(--cyan);
+ border-radius:50%;
+ position:absolute;
+ transform:translateX(-38px)
+}
+
+/* FOOTER */
+footer{
+ text-align:center;
+ padding:40px;
+ opacity:.6
+}
 </style>
 </head>
 
 <body>
-
 <div id="particles"></div>
 
+<!-- NAV -->
 <nav>
- <div class="gradient" style="font-weight:700">PK</div>
+ <div class="gradient" style="font-weight:700;font-size:20px">SQ</div>
  <div>
   <a href="#home">Home</a>
   <a href="#about">About</a>
@@ -92,73 +126,83 @@ nav a:hover{color:var(--cyan)}
  </div>
 </nav>
 
+<!-- HERO -->
 <section id="home" class="section hero">
  <div>
   <h1 style="font-size:56px;font-weight:700">
    Hello! I'm<br>
    <span class="gradient">Syed Saqalain Quadri</span>
   </h1>
-  <p style="margin-top:24px;max-width:520px">
+  <p style="margin-top:22px;max-width:520px">
    DevOps Engineer with 3+ years of experience in cloud infrastructure,
-   CI/CD automation, and containerization.
+   CI/CD automation, Kubernetes, and multi-cloud platforms.
   </p>
   <div style="margin-top:36px;display:flex;gap:16px">
    <a href="#contact" class="btn btn-primary">Get In Touch</a>
    <a href="#projects" class="btn btn-outline">View My Work</a>
   </div>
  </div>
- <img src="assets/profile.jpg"
-  style="width:380px;border-radius:26px;
-  box-shadow:0 0 40px rgba(34,211,238,.3)">
+ <img src="assets/profile.jpg" alt="Syed Saqalain Quadri">
 </section>
 
-<section id="projects" class="section">
- <h2 class="gradient" style="text-align:center;font-size:44px">Featured Project</h2>
+<!-- ABOUT -->
+<section id="about" class="section">
+ <h2 class="gradient" style="text-align:center;font-size:44px">About Me</h2>
+ <p style="text-align:center;margin-top:16px;opacity:.85">
+  Passionate DevOps Engineer with expertise in cloud, automation, and containerization
+ </p>
 
+ <div class="grid" style="margin-top:60px">
+  <div class="card"><h3 class="gradient">Programming & DB</h3><p>Python, FastAPI, PostgreSQL, MySQL</p></div>
+  <div class="card"><h3 class="gradient">CI/CD</h3><p>Jenkins, GitHub Actions, GitLab CI, Argo CD</p></div>
+  <div class="card"><h3 class="gradient">Cloud</h3><p>AWS, Azure, GCP (multi-cloud)</p></div>
+  <div class="card"><h3 class="gradient">Automation</h3><p>Terraform, Ansible, Shell</p></div>
+  <div class="card"><h3 class="gradient">Containers</h3><p>Docker, Kubernetes, EKS, AKS</p></div>
+  <div class="card"><h3 class="gradient">Monitoring</h3><p>Prometheus, Grafana, Dynatrace</p></div>
+ </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+ <h2 class="gradient" style="text-align:center;font-size:44px">Work Experience</h2>
  <div class="card" style="margin-top:60px">
-  <h3 class="gradient">Mahindra Finance – FOS & LMS Platforms | Bootlabs</h3>
+  <h3>DevOps Engineer</h3>
+  <p class="gradient">Infosys · 2023 – Present</p>
+  <ul class="timeline">
+   <li>Provisioned AWS infrastructure using Terraform, reducing manual effort by 70%</li>
+   <li>Managed multi-account AWS environments with SCPs & IAM</li>
+   <li>Built GitLab CI/CD parent-child pipelines</li>
+   <li>Hardened Docker images achieving 70% image size reduction</li>
+  </ul>
+ </div>
+</section>
 
-  <div class="grid" style="margin-top:30px">
-   <img src="assets/projects/mahindra-fos-lms-architecture.png"
-        style="width:100%;border-radius:14px">
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section">
+ <h2 class="gradient" style="text-align:center;font-size:44px">Professional Certifications</h2>
+ <div class="grid" style="margin-top:60px">
+  <div class="card">AWS Solutions Architect</div>
+  <div class="card">AWS Cloud Practitioner</div>
+  <div class="card">GitHub Foundations</div>
+  <div class="card">Terraform Associate</div>
+ </div>
+</section>
 
-   <div>
-    <p><b>Objectives:</b> Design and operate a secure, scalable multi-cloud
-    infrastructure ensuring high availability, compliance, cost optimisation,
-    and reliable CI/CD-driven deployments.</p>
-
-    <p><b>Challenges:</b> Enforcing strict security controls across AWS, GCP, and
-    Azure; managing EKS production issues; large-scale SSL/TLS updates; cloud
-    cost control.</p>
-
-    <p><b>Actions:</b> Built and managed Amazon EKS clusters; implemented Terraform
-    infrastructure and Jenkins pipelines; integrated Prometheus, Grafana, and
-    Dynatrace; automated SSL/TLS updates for 450+ GCP load balancers; executed
-    monthly DR drills.</p>
-
-    <p><b>Outcomes:</b> Improved production stability and reliability, strengthened
-    multi-cloud security posture, reduced deployment risk, and achieved
-    measurable cloud cost optimisation.</p>
-
-    <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px">
-     <span class="pill">Amazon EKS</span>
-     <span class="pill">Terraform</span>
-     <span class="pill">Jenkins</span>
-     <span class="pill">Prometheus</span>
-     <span class="pill">Grafana</span>
-     <span class="pill">Dynatrace</span>
-     <span class="pill">AWS</span>
-     <span class="pill">GCP</span>
-     <span class="pill">Azure</span>
-    </div>
-   </div>
+<!-- PROJECTS -->
+<section id="projects" class="section">
+ <h2 class="gradient" style="text-align:center;font-size:44px">Featured Projects</h2>
+ <div class="grid" style="margin-top:60px">
+  <div class="card">
+   <h3 class="gradient">Mahindra Finance – FOS & LMS</h3>
+   <p>Secure, scalable multi-cloud DevOps platform</p>
+   <a href="project-mahindra.html" class="btn btn-outline" style="margin-top:16px">View Details →</a>
   </div>
  </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="section">
  <h2 class="gradient" style="text-align:center;font-size:44px">Get In Touch</h2>
-
  <div class="grid" style="margin-top:60px">
   <div class="card" style="text-align:center">
    <i class="fa-solid fa-envelope fa-2x gradient"></i>
@@ -175,20 +219,15 @@ nav a:hover{color:var(--cyan)}
  </div>
 </section>
 
-<footer style="text-align:center;padding:40px;opacity:.6">
+<footer>
  © 2025 Syed Saqalain Quadri · Built with passion for DevOps
 </footer>
 
 <script>
 tsParticles.load("particles",{
- particles:{
-  number:{value:80},
-  color:{value:"#22d3ee"},
-  links:{enable:true,opacity:.15},
-  move:{enable:true,speed:.3}
- }
+ particles:{number:{value:80},color:{value:"#22d3ee"},
+ links:{enable:true,opacity:.15},move:{enable:true,speed:.3}}
 });
 </script>
-
 </body>
 </html>
