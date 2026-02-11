@@ -92,38 +92,33 @@ nav a:hover{color:var(--cyan)}
  align-items:center;
  gap:80px;
 }
-
-/* PROFILE CARD */
-.profile-wrapper{
+.hero-img-wrapper{
  position:relative;
- border-radius:30px;
- padding:6px;
- background:linear-gradient(135deg,var(--cyan),var(--pink));
+ max-width:400px;
 }
-.profile-inner{
- background:var(--card);
- border-radius:26px;
- padding:30px;
- text-align:center;
-}
-.profile-inner img{
+.hero-img-wrapper img{
  width:100%;
- max-width:380px;
- border-radius:26px;
+ border-radius:30px;
+ border:3px solid transparent;
+ background:linear-gradient(var(--bg),var(--bg)) padding-box,
+ linear-gradient(135deg,var(--cyan),var(--pink)) border-box;
  transition:.5s;
 }
-.profile-inner img:hover{
+.hero-img-wrapper img:hover{
  transform:scale(1.03);
+ box-shadow:0 0 60px rgba(34,211,238,.4);
 }
-.profile-caption{
- margin-top:18px;
+.profile-footer{
+ position:absolute;
+ bottom:0;
+ width:100%;
+ padding:18px;
+ text-align:center;
+ background:linear-gradient(to top, rgba(5,8,20,.95), transparent);
+ border-radius:0 0 30px 30px;
 }
-.profile-caption h3{
- color:#fff;
-}
-.profile-caption p{
- opacity:.7;
-}
+.profile-footer h4{margin-bottom:4px}
+.profile-footer p{opacity:.7;font-size:14px}
 
 /* EXPERIENCE TIMELINE */
 .exp-wrapper{
@@ -230,14 +225,12 @@ footer{
   </div>
  </div>
 
- <div class="profile-wrapper">
-  <div class="profile-inner">
+ <div class="hero-img-wrapper">
    <img src="assets/profile.jpg" alt="Syed Saqalain Quadri">
-   <div class="profile-caption">
-    <h3>DevOps Engineer</h3>
-    <p>Building the future of infrastructure</p>
+   <div class="profile-footer">
+     <h4>DevOps Engineer</h4>
+     <p>Building the future of infrastructure</p>
    </div>
-  </div>
  </div>
 </section>
 
