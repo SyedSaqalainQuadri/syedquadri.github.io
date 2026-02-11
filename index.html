@@ -120,6 +120,16 @@ nav a:hover{color:var(--cyan)}
 .profile-footer h4{margin-bottom:4px}
 .profile-footer p{opacity:.7;font-size:14px}
 
+/* ABOUT ENHANCEMENT */
+#about .card{
+ border:1px solid rgba(34,211,238,.15);
+}
+#about .card:hover{
+ transform:translateY(-10px);
+ box-shadow:0 0 60px rgba(34,211,238,.35);
+ border:1px solid var(--cyan);
+}
+
 /* EXPERIENCE TIMELINE */
 .exp-wrapper{
  position:relative;
@@ -143,6 +153,29 @@ nav a:hover{color:var(--cyan)}
  background:var(--cyan);
  box-shadow:0 0 15px var(--cyan);
 }
+.timeline{
+ margin-top:20px;
+}
+.timeline li{
+ margin-bottom:16px;
+ list-style:none;
+ position:relative;
+ padding-left:26px;
+ line-height:1.7;
+ color:#aab4d4;
+}
+.timeline li::before{
+ content:"▹";
+ position:absolute;
+ left:0;
+ color:var(--cyan);
+ font-size:18px;
+}
+.timeline strong{
+ color:#ffffff;
+ font-weight:600;
+}
+
 
 /* CERT ICONS */
 .cert-icon{
@@ -253,66 +286,87 @@ footer{
 
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
- <h2 class="gradient" style="text-align:center;font-size:46px">Work Experience</h2>
- <p style="text-align:center;margin-top:16px;opacity:.85">
-  Professional journey and achievements
- </p>
+  <h2 class="gradient" style="text-align:center;font-size:46px">Work Experience</h2>
+  <p style="text-align:center;margin-top:16px;opacity:.85">
+    Professional journey and achievements
+  </p>
 
- <div class="exp-wrapper" style="margin-top:70px">
-  <div class="exp-dot"></div>
-  <div class="card">
-   <h3>Associate Cloud Engineer – Bootlabs Technologies</h3>
-   <p class="gradient">May 2025 – Present</p>
-   <ul class="timeline">
-   <li>Automated EBS snapshot management and AMI cleanup improving cloud efficiency</li>
-   <li>Designed Jenkins CI/CD pipelines with Maven build automation</li>
-   <li>Provisioned AWS infrastructure using Terraform modules</li>
-   <li>Configured Jenkins master-slave distributed architecture</li>
-   <li>Implemented Docker & Kubernetes orchestration strategies</li>
-   <li>Performed SRE responsibilities for production systems</li>
-   </ul>
-  </div>
- </div>
+  <!-- Bootlabs -->
+  <div class="exp-wrapper" style="margin-top:70px">
+    <div class="exp-dot"></div>
+    <div class="card">
+      <h3>Associate Cloud Engineer – Bootlabs Technologies</h3>
+      <p class="gradient">May 2025 – Present</p>
 
- <div class="exp-wrapper" style="margin-top:50px">
-  <div class="exp-dot"></div>
-  <div class="card">
-   <h3>DevOps Engineer – INAT Pvt Ltd</h3>
-   <p class="gradient">Aug 2024 – May 2025</p>
-   <ul class="timeline">
-   <li>Extensively worked with EC2, VPC, CloudWatch, Lambda, S3, RDS & IAM</li>
-   <li>Implemented monitoring using Prometheus & Grafana</li>
-   <li>Provisioned infrastructure using Terraform</li>
-   <li>Managed artifacts via JFrog Artifactory</li>
-   <li>Designed Helm charts for Kubernetes deployments</li>
-   <li>Implemented ELK-based logging solutions</li>
-   </ul>
+      <ul class="timeline">
+        <li><strong>Automated operational tasks</strong> including EBS snapshot management and removal of unused AMI resources, improving cloud efficiency</li>
+        <li><strong>Designed and implemented CI/CD pipelines</strong> using Jenkins with Maven build automation</li>
+        <li><strong>Configured Jenkins master-slave architecture</strong> for distributed build execution</li>
+        <li><strong>Developed optimized Docker images</strong> using multi-stage builds reducing image size</li>
+        <li><strong>Implemented container orchestration</strong> using Docker & Kubernetes</li>
+        <li><strong>Provisioned AWS infrastructure</strong> using Terraform modules for automated deployment</li>
+        <li><strong>Integrated automated testing</strong> into CI/CD pipelines</li>
+        <li><strong>Managed continuous build & deployments</strong> across Dev, QA, UAT</li>
+        <li><strong>Performed Site Reliability Engineering (SRE)</strong> for production systems</li>
+        <li>Created Shell scripts for automation & maintenance tasks</li>
+        <li>Managed sprint workflows using JIRA</li>
+      </ul>
+    </div>
   </div>
- </div>
 
- <div class="exp-wrapper" style="margin-top:50px">
-  <div class="exp-dot"></div>
-  <div class="card">
-   <h3>Graduate Trainee Engineer – West Pharmaceuticals</h3>
-   <p class="gradient">Jul 2023 – Aug 2024</p>
-   <ul class="timeline">
-    <li>Supported automation initiatives improving production efficiency</li>
-    <li>Worked with cross-functional teams for system optimization</li>
-   </ul>
-  </div>
- </div>
+  <!-- INAT -->
+  <div class="exp-wrapper" style="margin-top:50px">
+    <div class="exp-dot"></div>
+    <div class="card">
+      <h3>DevOps Engineer – INAT Pvt Ltd</h3>
+      <p class="gradient">Aug 2024 – May 2025</p>
 
- <div class="exp-wrapper" style="margin-top:50px">
-  <div class="exp-dot"></div>
-  <div class="card">
-   <h3>Technical Intern – DRDO (DEBEL)</h3>
-   <p class="gradient">Apr 2022 – Sep 2022</p>
-   <ul class="timeline">
-    <li>Contributed to research-oriented automation tasks</li>
-    <li>Assisted in technical documentation & system validation</li>
-   </ul>
+      <ul class="timeline">
+        <li><strong>Worked extensively with AWS services</strong> (EC2, VPC, CloudWatch, Lambda, S3, RDS, IAM)</li>
+        <li><strong>Installed & configured Jenkins plugins</strong> to enhance CI/CD capabilities</li>
+        <li><strong>Implemented monitoring solutions</strong> using Prometheus & Grafana</li>
+        <li><strong>Developed Terraform modules</strong> for automated infrastructure provisioning</li>
+        <li><strong>Managed artifact versioning</strong> using JFrog Artifactory</li>
+        <li><strong>Deployed containerized applications</strong> using Docker & Kubernetes</li>
+        <li><strong>Designed and implemented Helm charts</strong> for scalable deployments</li>
+        <li>Stored Docker images in ECR & Docker Hub</li>
+        <li>Provisioned EC2 instances for deployments</li>
+        <li>Implemented logging using ELK stack</li>
+        <li>Automated build, test & deployment workflows</li>
+        <li>Performed troubleshooting & root cause analysis of production issues</li>
+      </ul>
+    </div>
   </div>
- </div>
+
+  <!-- West Pharmaceuticals -->
+  <div class="exp-wrapper" style="margin-top:50px">
+    <div class="exp-dot"></div>
+    <div class="card">
+      <h3>Graduate Trainee Engineer – West Pharmaceuticals</h3>
+      <p class="gradient">Jul 2023 – Aug 2024</p>
+
+      <ul class="timeline">
+        <li><strong>Supported infrastructure & automation initiatives</strong> improving operational efficiency</li>
+        <li>Collaborated with cross-functional teams on manufacturing systems</li>
+        <li>Gained hands-on experience in engineering operations</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DRDO -->
+  <div class="exp-wrapper" style="margin-top:50px">
+    <div class="exp-dot"></div>
+    <div class="card">
+      <h3>Technical Intern – DRDO (DEBEL)</h3>
+      <p class="gradient">Apr 2022 – Sep 2022</p>
+
+      <ul class="timeline">
+        <li><strong>Worked on biomedical engineering projects</strong> at premier defense research laboratory</li>
+        <li>Gained exposure to technical research methodologies</li>
+        <li>Assisted in systems engineering & validation tasks</li>
+      </ul>
+    </div>
+  </div>
 
 </section>
 
@@ -395,7 +449,7 @@ footer{
 </section>
 
 <footer>
- © 2025 Syed Saqalain Quadri · Built with passion for DevOps
+ © 2026 Syed Saqalain Quadri · Built with passion for DevOps
 
 <script>
 tsParticles.load("particles",{
