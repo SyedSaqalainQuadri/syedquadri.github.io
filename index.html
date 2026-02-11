@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Syed Saqalain Quadri | DevOps Engineer</title>
 
@@ -17,52 +17,54 @@
  --purple:#8b5cf6;
  --pink:#ec4899;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
  font-family:Inter;
  background:var(--bg);
  color:#cbd5f5;
+ overflow-x:hidden;
 }
 #particles{position:fixed;inset:0;z-index:-1}
 
 /* NAV */
 nav{
  position:fixed;top:0;width:100%;
- padding:16px 80px;
+ padding:16px 60px;
  backdrop-filter:blur(14px);
- background:rgba(5,8,20,.8);
+ background:rgba(5,8,20,.75);
  display:flex;justify-content:space-between;
  z-index:100;
 }
 nav a{
- color:#9aa4c5;text-decoration:none;
- margin-left:28px;font-size:15px;
+ color:#aab4d4;text-decoration:none;
+ margin-left:26px;font-size:15px;
  transition:.3s
 }
 nav a:hover{color:var(--cyan)}
 
 /* COMMON */
-.section{padding:120px 100px}
+.section{padding:120px 80px}
 .gradient{
  background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));
  -webkit-background-clip:text;color:transparent
 }
 .card{
- background:rgba(11,16,34,.95);
- border-radius:26px;
- padding:40px;
- border:1px solid rgba(255,255,255,.05);
+ background:rgba(11,16,34,.9);
+ border-radius:22px;
+ padding:35px;
  transition:.4s;
+ border:1px solid rgba(255,255,255,.05);
 }
 .card:hover{
  transform:translateY(-8px);
- box-shadow:0 0 60px rgba(34,211,238,.25);
+ box-shadow:0 0 50px rgba(34,211,238,.25);
 }
 .grid{
  display:grid;
- grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
- gap:40px;
+ grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+ gap:36px;
 }
 .btn{
  padding:14px 28px;border-radius:30px;
@@ -88,68 +90,94 @@ nav a:hover{color:var(--cyan)}
  display:grid;
  grid-template-columns:1.1fr .9fr;
  align-items:center;
- gap:100px;
+ gap:80px;
 }
-.profile-wrapper{
+.hero-img-wrapper{
  position:relative;
- max-width:420px;
+ max-width:400px;
 }
-.profile-wrapper img{
+.hero-img-wrapper img{
  width:100%;
- border-radius:36px;
- transition:.4s;
+ border-radius:30px;
+ border:3px solid transparent;
+ background:linear-gradient(var(--bg),var(--bg)) padding-box,
+ linear-gradient(135deg,var(--cyan),var(--pink)) border-box;
+ transition:.5s;
 }
-.profile-wrapper:hover img{
+.hero-img-wrapper img:hover{
  transform:scale(1.03);
+ box-shadow:0 0 60px rgba(34,211,238,.4);
 }
 .profile-footer{
  position:absolute;
  bottom:0;
  width:100%;
- padding:20px;
- background:linear-gradient(to top, rgba(5,8,20,.95), transparent);
- border-radius:0 0 36px 36px;
+ padding:18px;
  text-align:center;
+ background:linear-gradient(to top, rgba(5,8,20,.95), transparent);
+ border-radius:0 0 30px 30px;
 }
-.profile-footer h3{font-weight:600}
+.profile-footer h4{margin-bottom:4px}
 .profile-footer p{opacity:.7;font-size:14px}
 
-/* EXPERIENCE TIMELINE */
-.timeline-container{
+/* EXPERIENCE ENHANCED */
+.experience-wrapper{
  position:relative;
- margin-top:80px;
- padding-left:50px;
 }
-.timeline-line{
+.experience-wrapper::before{
+ content:"";
  position:absolute;
- left:0;
+ left:-25px;
  top:0;
  width:3px;
  height:100%;
  background:linear-gradient(var(--cyan),var(--pink));
 }
-.timeline-dot{
+
+.timeline{
+ margin-top:40px;
+}
+.timeline li{
+ margin-bottom:18px;
+ list-style:none;
+ position:relative;
+ padding-left:24px;
+}
+.timeline li::before{
+ content:"▹";
  position:absolute;
- left:-8px;
- width:18px;height:18px;
- background:var(--cyan);
- border-radius:50%;
- box-shadow:0 0 20px var(--cyan);
+ left:0;
+ color:var(--cyan);
 }
 
-/* CONTACT ICON STYLE */
+/* CERT ICONS */
+.cert-icon{
+ font-size:42px;
+ margin-bottom:18px;
+ background:linear-gradient(90deg,var(--cyan),var(--pink));
+ -webkit-background-clip:text;
+ color:transparent;
+}
+
+/* CONTACT UPDATED STYLE */
+.contact-card{
+ text-align:center;
+}
 .contact-icon{
- width:80px;height:80px;
- margin:0 auto 20px auto;
- display:flex;align-items:center;justify-content:center;
+ width:70px;
+ height:70px;
+ margin:0 auto 18px auto;
  border-radius:50%;
+ display:flex;
+ align-items:center;
+ justify-content:center;
  background:linear-gradient(135deg,var(--cyan),var(--pink));
- box-shadow:0 0 40px rgba(34,211,238,.4);
+ box-shadow:0 0 35px rgba(34,211,238,.4);
  transition:.4s;
 }
 .contact-icon i{
- font-size:30px;
  color:#000;
+ font-size:26px;
 }
 .contact-icon:hover{
  transform:scale(1.1);
@@ -158,7 +186,7 @@ nav a:hover{color:var(--cyan)}
 /* FOOTER */
 footer{
  text-align:center;
- padding:60px;
+ padding:50px;
  opacity:.6;
  font-size:14px;
 }
@@ -172,7 +200,9 @@ footer{
  <div class="gradient" style="font-weight:700;font-size:22px">SQ</div>
  <div>
   <a href="#home">Home</a>
+  <a href="#about">About</a>
   <a href="#experience">Experience</a>
+  <a href="#certifications">Certifications</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
  </div>
@@ -181,14 +211,15 @@ footer{
 <!-- HERO -->
 <section id="home" class="section hero">
  <div>
-  <h1 style="font-size:58px;font-weight:700">
+  <h1 style="font-size:58px;font-weight:700;line-height:1.1">
    Hello! I'm<br>
    <span class="gradient">Syed Saqalain Quadri</span>
   </h1>
-  <p style="margin-top:30px;max-width:580px;line-height:1.8">
+  <p style="margin-top:24px;max-width:560px;line-height:1.7">
    Results-driven DevOps Engineer with 3+ years of experience in cloud infrastructure management,
-   CI/CD automation, containerization, and reliability engineering. Expertise in AWS, Docker,
-   Kubernetes, Terraform, monitoring solutions, and high availability architecture.
+   CI/CD automation, and containerization. Expertise in building and maintaining scalable infrastructure
+   using AWS, Docker, Kubernetes, and Terraform. Proven track record in implementing continuous integration
+   and deployment pipelines, optimizing system performance, and ensuring high availability architecture.
   </p>
   <div style="margin-top:40px;display:flex;gap:18px">
    <a href="#contact" class="btn btn-primary">Get In Touch</a>
@@ -196,10 +227,10 @@ footer{
   </div>
  </div>
 
- <div class="profile-wrapper">
-   <img src="assets/profile.jpg" alt="Profile">
+ <div class="hero-img-wrapper">
+   <img src="assets/profile.jpg" alt="Syed Saqalain Quadri">
    <div class="profile-footer">
-     <h3>DevOps Engineer</h3>
+     <h4>DevOps Engineer</h4>
      <p>Building the future of infrastructure</p>
    </div>
  </div>
@@ -207,90 +238,87 @@ footer{
 
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
- <h2 class="gradient" style="text-align:center;font-size:48px">Work Experience</h2>
+ <h2 class="gradient" style="text-align:center;font-size:46px">Work Experience</h2>
 
- <div class="timeline-container">
-   <div class="timeline-line"></div>
+ <div class="experience-wrapper" style="margin-top:70px">
 
-   <div class="timeline-dot" style="top:40px"></div>
-   <div class="card" style="margin-bottom:50px">
-     <h3>Associate Cloud Engineer – Bootlabs Technologies</h3>
-     <p class="gradient">2025 – Present</p>
-     <ul style="margin-top:20px;line-height:1.8">
-       <li>Automated EBS snapshot & AMI cleanup improving cloud efficiency</li>
-       <li>Designed Jenkins CI/CD with Maven automation</li>
-       <li>Provisioned AWS infrastructure via Terraform modules</li>
-       <li>Implemented Docker & Kubernetes orchestration strategies</li>
-       <li>Performed Site Reliability Engineering for production systems</li>
-     </ul>
-   </div>
+  <div class="card">
+   <h3>Associate Cloud Engineer – Bootlabs Technologies</h3>
+   <p class="gradient">May 2025 – Present</p>
+   <ul class="timeline">
+   <li>Automated EBS snapshot management and AMI cleanup improving cloud efficiency</li>
+   <li>Designed Jenkins CI/CD pipelines with Maven build automation</li>
+   <li>Provisioned AWS infrastructure using Terraform modules</li>
+   <li>Configured Jenkins master-slave distributed architecture</li>
+   <li>Implemented Docker & Kubernetes orchestration strategies</li>
+   <li>Performed SRE responsibilities for production systems</li>
+   </ul>
+  </div>
 
-   <div class="timeline-dot" style="top:330px"></div>
-   <div class="card" style="margin-bottom:50px">
-     <h3>DevOps Engineer – INAT Pvt Ltd</h3>
-     <p class="gradient">2024 – 2025</p>
-     <ul style="margin-top:20px;line-height:1.8">
-       <li>Worked extensively with AWS EC2, VPC, S3, RDS, IAM</li>
-       <li>Implemented monitoring using Prometheus & Grafana</li>
-       <li>Developed Terraform modules for infrastructure automation</li>
-       <li>Designed Helm charts for Kubernetes deployments</li>
-       <li>Implemented ELK logging solutions</li>
-     </ul>
-   </div>
+  <div class="card" style="margin-top:40px">
+   <h3>DevOps Engineer – INAT Pvt Ltd</h3>
+   <p class="gradient">Aug 2024 – May 2025</p>
+   <ul class="timeline">
+   <li>Extensively worked with EC2, VPC, CloudWatch, Lambda, S3, RDS & IAM</li>
+   <li>Implemented monitoring using Prometheus & Grafana</li>
+   <li>Provisioned infrastructure using Terraform</li>
+   <li>Managed artifacts via JFrog Artifactory</li>
+   <li>Designed Helm charts for Kubernetes deployments</li>
+   <li>Implemented ELK-based logging solutions</li>
+   </ul>
+  </div>
 
-   <div class="timeline-dot" style="top:620px"></div>
-   <div class="card" style="margin-bottom:50px">
-     <h3>Graduate Trainee Engineer – West Pharmaceuticals</h3>
-     <p class="gradient">2023 – 2024</p>
-     <ul style="margin-top:20px;line-height:1.8">
-       <li>Supported pharmaceutical manufacturing systems</li>
-       <li>Collaborated with cross-functional engineering teams</li>
-       <li>Assisted infrastructure and automation initiatives</li>
-     </ul>
-   </div>
+  <div class="card" style="margin-top:40px">
+   <h3>Graduate Trainee Engineer – West Pharmaceuticals</h3>
+   <p class="gradient">Jul 2023 – Aug 2024</p>
+   <ul class="timeline">
+   <li>Supported pharmaceutical manufacturing systems and automation workflows</li>
+   <li>Collaborated with cross-functional engineering teams to optimize operations</li>
+   <li>Assisted in infrastructure stability and reliability improvements</li>
+   </ul>
+  </div>
 
-   <div class="timeline-dot" style="top:850px"></div>
-   <div class="card">
-     <h3>Technical Intern – DRDO (DEBEL)</h3>
-     <p class="gradient">2022</p>
-     <ul style="margin-top:20px;line-height:1.8">
-       <li>Worked on biomedical engineering projects</li>
-       <li>Gained exposure to research methodologies</li>
-       <li>Supported systems engineering initiatives</li>
-     </ul>
-   </div>
+  <div class="card" style="margin-top:40px">
+   <h3>Technical Intern – DRDO (DEBEL)</h3>
+   <p class="gradient">Apr 2022 – Sep 2022</p>
+   <ul class="timeline">
+   <li>Worked on biomedical and defense research engineering initiatives</li>
+   <li>Gained hands-on exposure to system analysis and project documentation</li>
+   <li>Supported R&D teams in prototype testing and validation</li>
+   </ul>
+  </div>
 
  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
- <h2 class="gradient" style="text-align:center;font-size:48px">Get In Touch</h2>
+ <h2 class="gradient" style="text-align:center;font-size:46px">Get In Touch</h2>
 
- <div class="grid" style="margin-top:80px">
+ <div class="grid" style="margin-top:70px">
 
-  <div class="card" style="text-align:center">
+  <div class="card contact-card">
    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
    <h3>Email</h3>
-   <p style="opacity:.7;margin:10px 0">syedsq34@gmail.com</p>
+   <p>syedsq34@gmail.com</p>
   </div>
 
-  <div class="card" style="text-align:center">
+  <div class="card contact-card">
    <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
    <h3>LinkedIn</h3>
   </div>
 
-  <div class="card" style="text-align:center">
+  <div class="card contact-card">
    <div class="contact-icon"><i class="fa-solid fa-file"></i></div>
    <h3>Resume</h3>
-   <a href="assets/resume.pdf" class="btn btn-outline" style="margin-top:20px">Download PDF</a>
+   <a href="assets/resume.pdf" class="btn btn-outline" style="margin-top:14px">Download PDF</a>
   </div>
 
  </div>
 </section>
 
 <footer>
- © 2025 Syed Saqalain Quadri · Built with passion for DevOps
+ © 2025 Syed Saqalain Quadri · Built with passion for DevOps & Cloud Engineering
 </footer>
 
 <script>
