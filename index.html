@@ -11,12 +11,21 @@
 
 <style>
 :root{
- --bg:#050814;--card:#0b1022;
- --cyan:#22d3ee;--purple:#8b5cf6;--pink:#ec4899;
+ --bg:#050814;
+ --card:#0b1022;
+ --cyan:#22d3ee;
+ --purple:#8b5cf6;
+ --pink:#ec4899;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Inter;background:var(--bg);color:#cbd5f5}
+body{
+ font-family:Inter;
+ background:var(--bg);
+ color:#cbd5f5;
+ overflow-x:hidden;
+}
 #particles{position:fixed;inset:0;z-index:-1}
 
 /* NAV */
@@ -24,88 +33,123 @@ nav{
  position:fixed;top:0;width:100%;
  padding:16px 60px;
  backdrop-filter:blur(14px);
- background:rgba(5,8,20,.7);
+ background:rgba(5,8,20,.75);
  display:flex;justify-content:space-between;
- z-index:100
+ z-index:100;
 }
-nav a{color:#aab4d4;text-decoration:none;margin-left:26px;font-size:15px}
+nav a{
+ color:#aab4d4;text-decoration:none;
+ margin-left:26px;font-size:15px;
+ transition:.3s
+}
 nav a:hover{color:var(--cyan)}
 
 /* COMMON */
-.section{padding:120px 60px}
+.section{padding:120px 80px}
 .gradient{
  background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));
  -webkit-background-clip:text;color:transparent
 }
 .card{
  background:rgba(11,16,34,.9);
- border-radius:18px;padding:30px;
- transition:.3s
+ border-radius:22px;
+ padding:35px;
+ transition:.4s;
+ border:1px solid rgba(255,255,255,.05);
 }
 .card:hover{
- transform:translateY(-6px);
- box-shadow:0 0 40px rgba(34,211,238,.25)
+ transform:translateY(-8px);
+ box-shadow:0 0 50px rgba(34,211,238,.25);
 }
 .grid{
  display:grid;
- grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
- gap:32px
+ grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+ gap:36px;
 }
 .btn{
  padding:14px 28px;border-radius:30px;
- font-weight:600;text-decoration:none;display:inline-block
+ font-weight:600;text-decoration:none;
+ display:inline-block;transition:.3s
 }
 .btn-primary{
  background:linear-gradient(90deg,var(--cyan),var(--pink));
- color:#000
+ color:#000;
 }
 .btn-outline{
  border:1px solid var(--cyan);
- color:var(--cyan)
+ color:var(--cyan);
 }
-.pill{
- background:#0f172a;
- padding:6px 14px;
- border-radius:20px;
- font-size:14px;
- color:var(--cyan)
+.btn-outline:hover{
+ background:var(--cyan);
+ color:#000;
 }
 
 /* HERO */
 .hero{
  min-height:100vh;
- display:grid;grid-template-columns:1.1fr .9fr;
- align-items:center;gap:60px
+ display:grid;
+ grid-template-columns:1.1fr .9fr;
+ align-items:center;
+ gap:80px;
 }
 .hero img{
- width:100%;max-width:380px;
- border-radius:26px;
- box-shadow:0 0 40px rgba(34,211,238,.3)
+ width:100%;
+ max-width:400px;
+ border-radius:30px;
+ border:3px solid transparent;
+ background:linear-gradient(var(--bg),var(--bg)) padding-box,
+ linear-gradient(135deg,var(--cyan),var(--pink)) border-box;
+ transition:.5s;
+}
+.hero img:hover{
+ transform:scale(1.03);
+ box-shadow:0 0 60px rgba(34,211,238,.4);
 }
 
 /* EXPERIENCE */
 .timeline{
- border-left:3px solid var(--cyan);
- padding-left:30px
+ margin-top:40px;
 }
 .timeline li{
- margin-bottom:28px;
- list-style:none
+ margin-bottom:18px;
+ list-style:none;
+ position:relative;
+ padding-left:24px;
 }
 .timeline li::before{
- content:"";
- width:14px;height:14px;
- background:var(--cyan);
- border-radius:50%;
+ content:"▹";
  position:absolute;
- transform:translateX(-38px)
+ left:0;
+ color:var(--cyan);
+}
+
+/* CERT ICONS */
+.cert-icon{
+ font-size:42px;
+ margin-bottom:18px;
+ background:linear-gradient(90deg,var(--cyan),var(--pink));
+ -webkit-background-clip:text;
+ color:transparent;
+}
+
+/* CONTACT */
+.contact-card{
+ text-align:center;
+}
+.contact-card i{
+ font-size:38px;
+ margin-bottom:16px;
+ background:linear-gradient(90deg,var(--cyan),var(--pink));
+ -webkit-background-clip:text;
+ color:transparent;
 }
 
 /* FOOTER */
 footer{
  text-align:center;
- padding:40px;
- opacity:.6
+ padding:50px;
+ opacity:.6;
+ font-size:14px;
 }
 </style>
 </head>
@@ -113,9 +157,8 @@ footer{
 <body>
 <div id="particles"></div>
 
-<!-- NAV -->
 <nav>
- <div class="gradient" style="font-weight:700;font-size:20px">SQ</div>
+ <div class="gradient" style="font-weight:700;font-size:22px">SQ</div>
  <div>
   <a href="#home">Home</a>
   <a href="#about">About</a>
@@ -129,15 +172,17 @@ footer{
 <!-- HERO -->
 <section id="home" class="section hero">
  <div>
-  <h1 style="font-size:56px;font-weight:700">
+  <h1 style="font-size:58px;font-weight:700;line-height:1.1">
    Hello! I'm<br>
    <span class="gradient">Syed Saqalain Quadri</span>
   </h1>
-  <p style="margin-top:22px;max-width:520px">
-   DevOps Engineer with 3+ years of experience in cloud infrastructure,
-   CI/CD automation, Kubernetes, and multi-cloud platforms.
+  <p style="margin-top:24px;max-width:560px;line-height:1.7">
+   Results-driven DevOps Engineer with 3 years of experience in cloud infrastructure management,
+   CI/CD automation, and containerization. Expertise in building and maintaining scalable infrastructure
+   using AWS, Docker, Kubernetes, and Terraform. Proven track record in implementing continuous integration
+   and deployment pipelines, optimizing system performance, and ensuring high availability architecture.
   </p>
-  <div style="margin-top:36px;display:flex;gap:16px">
+  <div style="margin-top:40px;display:flex;gap:18px">
    <a href="#contact" class="btn btn-primary">Get In Touch</a>
    <a href="#projects" class="btn btn-outline">View My Work</a>
   </div>
@@ -145,90 +190,123 @@ footer{
  <img src="assets/profile.jpg" alt="Syed Saqalain Quadri">
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section">
- <h2 class="gradient" style="text-align:center;font-size:44px">About Me</h2>
- <p style="text-align:center;margin-top:16px;opacity:.85">
-  Passionate DevOps Engineer with expertise in cloud, automation, and containerization
- </p>
-
- <div class="grid" style="margin-top:60px">
-  <div class="card"><h3 class="gradient">Programming & DB</h3><p>Python, FastAPI, PostgreSQL, MySQL</p></div>
-  <div class="card"><h3 class="gradient">CI/CD</h3><p>Jenkins, GitHub Actions, GitLab CI, Argo CD</p></div>
-  <div class="card"><h3 class="gradient">Cloud</h3><p>AWS, Azure, GCP (multi-cloud)</p></div>
-  <div class="card"><h3 class="gradient">Automation</h3><p>Terraform, Ansible, Shell</p></div>
-  <div class="card"><h3 class="gradient">Containers</h3><p>Docker, Kubernetes, EKS, AKS</p></div>
-  <div class="card"><h3 class="gradient">Monitoring</h3><p>Prometheus, Grafana, Dynatrace</p></div>
- </div>
-</section>
-
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
- <h2 class="gradient" style="text-align:center;font-size:44px">Work Experience</h2>
- <div class="card" style="margin-top:60px">
-  <h3>DevOps Engineer</h3>
-  <p class="gradient">Infosys · 2023 – Present</p>
+ <h2 class="gradient" style="text-align:center;font-size:46px">Work Experience</h2>
+
+ <div class="card" style="margin-top:70px">
+  <h3>Associate Cloud Engineer – Bootlabs Technologies</h3>
+  <p class="gradient">May 2025 – Present</p>
   <ul class="timeline">
-   <li>Provisioned AWS infrastructure using Terraform, reducing manual effort by 70%</li>
-   <li>Managed multi-account AWS environments with SCPs & IAM</li>
-   <li>Built GitLab CI/CD parent-child pipelines</li>
-   <li>Hardened Docker images achieving 70% image size reduction</li>
+   <li>Automated EBS snapshot management and AMI cleanup improving cloud efficiency</li>
+   <li>Designed Jenkins CI/CD pipelines with Maven build automation</li>
+   <li>Provisioned AWS infrastructure using Terraform modules</li>
+   <li>Configured Jenkins master-slave distributed architecture</li>
+   <li>Implemented Docker & Kubernetes orchestration strategies</li>
+   <li>Performed SRE responsibilities for production systems</li>
   </ul>
  </div>
+
+ <div class="card" style="margin-top:40px">
+  <h3>DevOps Engineer – INAT Pvt Ltd</h3>
+  <p class="gradient">Aug 2024 – May 2025</p>
+  <ul class="timeline">
+   <li>Extensively worked with EC2, VPC, CloudWatch, Lambda, S3, RDS & IAM</li>
+   <li>Implemented monitoring using Prometheus & Grafana</li>
+   <li>Provisioned infrastructure using Terraform</li>
+   <li>Managed artifacts via JFrog Artifactory</li>
+   <li>Designed Helm charts for Kubernetes deployments</li>
+   <li>Implemented ELK-based logging solutions</li>
+  </ul>
+ </div>
+
+ <div class="card" style="margin-top:40px">
+  <h3>Graduate Trainee Engineer – West Pharmaceuticals</h3>
+  <p class="gradient">Jul 2023 – Aug 2024</p>
+ </div>
+
+ <div class="card" style="margin-top:40px">
+  <h3>Technical Intern – DRDO (DEBEL)</h3>
+  <p class="gradient">Apr 2022 – Sep 2022</p>
+ </div>
+
 </section>
 
 <!-- CERTIFICATIONS -->
 <section id="certifications" class="section">
- <h2 class="gradient" style="text-align:center;font-size:44px">Professional Certifications</h2>
- <div class="grid" style="margin-top:60px">
-  <div class="card">AWS Solutions Architect</div>
-  <div class="card">AWS Cloud Practitioner</div>
-  <div class="card">GitHub Foundations</div>
-  <div class="card">Terraform Associate</div>
+ <h2 class="gradient" style="text-align:center;font-size:46px">Professional Certifications</h2>
+ <div class="grid" style="margin-top:70px">
+
+  <div class="card contact-card">
+   <i class="fa-solid fa-chart-line cert-icon"></i>
+   <h3>Lean Six Sigma & RPA Dynamics</h3>
+   <p>Approved by Council of Human Resource Development, UAE</p>
+  </div>
+
+  <div class="card contact-card">
+   <i class="fa-solid fa-brain cert-icon"></i>
+   <h3>Artificial Intelligence</h3>
+   <p>NASSCOM</p>
+  </div>
+
  </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECT -->
 <section id="projects" class="section">
- <h2 class="gradient" style="text-align:center;font-size:44px">Featured Projects</h2>
- <div class="grid" style="margin-top:60px">
+ <h2 class="gradient" style="text-align:center;font-size:46px">Featured Project</h2>
+ <div class="grid" style="margin-top:70px">
   <div class="card">
-   <h3 class="gradient">Mahindra Finance – FOS & LMS</h3>
-   <p>Secure, scalable multi-cloud DevOps platform</p>
-   <a href="project-mahindra.html" class="btn btn-outline" style="margin-top:16px">View Details →</a>
+   <h3 class="gradient">Mahindra Finance – FOS & LMS Platforms</h3>
+   <p style="margin-top:10px">
+    Secure multi-cloud infrastructure with EKS, Terraform, Jenkins CI/CD,
+    monitoring via Prometheus & Dynatrace, and 450+ GCP SSL automation.
+   </p>
+   <a href="project-mahindra.html" class="btn btn-outline" style="margin-top:20px">View Details →</a>
   </div>
  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
- <h2 class="gradient" style="text-align:center;font-size:44px">Get In Touch</h2>
- <div class="grid" style="margin-top:60px">
-  <div class="card" style="text-align:center">
-   <i class="fa-solid fa-envelope fa-2x gradient"></i>
-   <p style="margin-top:12px">syedsq34@gmail.com</p>
+ <h2 class="gradient" style="text-align:center;font-size:46px">Get In Touch</h2>
+
+ <div class="grid" style="margin-top:70px">
+
+  <div class="card contact-card">
+   <i class="fa-solid fa-envelope"></i>
+   <h3>Email</h3>
+   <p>syedsq34@gmail.com</p>
   </div>
-  <div class="card" style="text-align:center">
-   <i class="fa-brands fa-linkedin fa-2x gradient"></i>
-   <p>LinkedIn</p>
+
+  <div class="card contact-card">
+   <i class="fa-brands fa-linkedin"></i>
+   <h3>LinkedIn</h3>
   </div>
-  <div class="card" style="text-align:center">
-   <i class="fa-solid fa-file fa-2x gradient"></i>
-   <a href="assets/resume.pdf" style="color:var(--cyan)">Download Resume</a>
+
+  <div class="card contact-card">
+   <i class="fa-solid fa-file"></i>
+   <h3>Resume</h3>
+   <a href="assets/resume.pdf" class="btn btn-outline" style="margin-top:14px">Download PDF</a>
   </div>
+
  </div>
 </section>
 
 <footer>
- © 2025 Syed Saqalain Quadri · Built with passion for DevOps
+ © 2025 Syed Saqalain Quadri · Built with passion for DevOps & Cloud Engineering
 </footer>
 
 <script>
 tsParticles.load("particles",{
- particles:{number:{value:80},color:{value:"#22d3ee"},
- links:{enable:true,opacity:.15},move:{enable:true,speed:.3}}
+ particles:{
+  number:{value:70},
+  color:{value:"#22d3ee"},
+  links:{enable:true,opacity:.15},
+  move:{enable:true,speed:.4}
+ }
 });
 </script>
+
 </body>
 </html>
-
