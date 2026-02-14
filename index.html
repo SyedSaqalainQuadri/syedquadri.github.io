@@ -462,7 +462,7 @@ tsParticles.load("particles",{
 });
 </script>
 
-<!-- 🔐 SMOOTH PREMIUM NAVBAR CIPHER EFFECT (CLICK ONLY) -->
+<!-- 🔐 UNIFORM NAVBAR SCRAMBLE EFFECT (CLICK ONLY) -->
 <script>
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 const navLinks = document.querySelectorAll("nav a");
@@ -474,31 +474,31 @@ navLinks.forEach(link => {
 
   link.addEventListener("click", () => {
 
-    let iteration = 0;
     clearInterval(interval);
+    let frame = 0;
+    const duration = 25; // controls smoothness & speed
 
     interval = setInterval(() => {
 
-      link.innerText = originalText
-        .split("")
-        .map((letter, index) => {
-
-          if (index < iteration) {
-            return originalText[index];
-          }
-
-          return letters[Math.floor(Math.random() * letters.length)];
-        })
-        .join("");
-
-      iteration += 0.08;   // smooth slow reveal
-
-      if (iteration >= originalText.length) {
+      // During scramble phase
+      if (frame < duration) {
+        link.innerText = originalText
+          .split("")
+          .map(char => {
+            if (char === " ") return " ";
+            return letters[Math.floor(Math.random() * letters.length)];
+          })
+          .join("");
+      } 
+      // Restore full original together
+      else {
         clearInterval(interval);
         link.innerText = originalText;
       }
 
-    }, 50);   // smooth frame timing
+      frame++;
+
+    }, 40); // higher = slower (smooth premium feel)
 
   });
 
@@ -507,6 +507,7 @@ navLinks.forEach(link => {
 
 </body>
 </html>
+
 
 
 
