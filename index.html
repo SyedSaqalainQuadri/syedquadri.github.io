@@ -462,26 +462,28 @@ tsParticles.load("particles",{
 });
 </script>
 
-<!-- 🔐 NAVBAR CIPHER / SCRAMBLE EFFECT (ONLY ADDITION) -->
+<!-- 🔐 SMOOTH PREMIUM NAVBAR CIPHER EFFECT (CLICK ONLY) -->
 <script>
-const letters = "abcdefghijklmnopqrstuvwxyz0123456789";
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 const navLinks = document.querySelectorAll("nav a");
 
 navLinks.forEach(link => {
 
   const originalText = link.innerText;
+  let interval = null;
 
   link.addEventListener("click", () => {
 
     let iteration = 0;
+    clearInterval(interval);
 
-    const interval = setInterval(() => {
+    interval = setInterval(() => {
 
       link.innerText = originalText
         .split("")
         .map((letter, index) => {
 
-          if(index < iteration){
+          if (index < iteration) {
             return originalText[index];
           }
 
@@ -489,14 +491,14 @@ navLinks.forEach(link => {
         })
         .join("");
 
-      if(iteration >= originalText.length){
+      iteration += 0.08;   // smooth slow reveal
+
+      if (iteration >= originalText.length) {
         clearInterval(interval);
         link.innerText = originalText;
       }
 
-      iteration += 1 / 3;
-
-    }, 40);
+    }, 50);   // smooth frame timing
 
   });
 
@@ -505,6 +507,7 @@ navLinks.forEach(link => {
 
 </body>
 </html>
+
 
 
 
