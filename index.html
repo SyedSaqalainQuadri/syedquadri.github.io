@@ -59,12 +59,14 @@ body{
 .cloud{
  position:absolute;
  width:220px;
- opacity:.6;
+ opacity:0.9;
  filter:
+   invert(1)
    brightness(2)
-   drop-shadow(0 0 25px rgba(34,211,238,.9))
-   drop-shadow(0 0 60px rgba(139,92,246,.6));
- animation: float linear infinite, breathe 6s ease-in-out infinite alternate;
+   drop-shadow(0 0 30px #22d3ee)
+   drop-shadow(0 0 60px #8b5cf6);
+ animation: float 120s linear infinite,
+            breathe 6s ease-in-out infinite alternate;
 }
 
 
@@ -274,7 +276,7 @@ nav a:hover{color:var(--cyan)}
 footer{
  text-align:center;
  padding:50px;
- opacity:.6;
+ opacity:1;
  font-size:14px;
 }
 
@@ -693,6 +695,7 @@ navLinks.forEach(link => {
  
 </body>
 </html>
+
 
 
 
