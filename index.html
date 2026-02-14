@@ -627,15 +627,9 @@ footer{
  © 2026 Syed Saqalain Quadri · Built with passion for DevOps
 
 <script>
-/* 🌌 PARALLAX EFFECT */
 const clouds = document.querySelectorAll(".cloud");
 
 document.addEventListener("mousemove", e=>{
- const x = (e.clientX / window.innerWidth - 0.5) * 20;
- const y = (e.clientY / window.innerHeight - 0.5) * 20;
-
- clouds.forEach((cloud, index)=>{
-  document.addEventListener("mousemove", e=>{
  const x = (e.clientX / window.innerWidth - 0.5) * 20;
  const y = (e.clientY / window.innerHeight - 0.5) * 20;
 
@@ -645,6 +639,7 @@ document.addEventListener("mousemove", e=>{
  });
 });
 </script>
+
 
 <!-- 🔐 NAVBAR UNIFORM SCRAMBLE (CLICK ONLY – GLOBAL TIMING) 
 <script>
@@ -698,5 +693,6 @@ navLinks.forEach(link => {
  
 </body>
 </html>
+
 
 
