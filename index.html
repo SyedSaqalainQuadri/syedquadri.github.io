@@ -462,16 +462,20 @@ tsParticles.load("particles",{
 });
 </script>
 
-<!-- 🔐 PREMIUM NAVBAR HOVER CIPHER EFFECT -->
+<!-- 🔐 SUBTLE & SMOOTH NAVBAR HOVER CIPHER EFFECT -->
 <script>
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 const navLinks = document.querySelectorAll("nav a");
 
 navLinks.forEach(link => {
 
   const originalText = link.innerText;
+  let isAnimating = false;
 
   link.addEventListener("mouseenter", () => {
+
+    if (isAnimating) return;
+    isAnimating = true;
 
     let iteration = 0;
 
@@ -481,7 +485,7 @@ navLinks.forEach(link => {
         .split("")
         .map((letter, index) => {
 
-          if(index < iteration) {
+          if(index < iteration){
             return originalText[index];
           }
 
@@ -489,14 +493,15 @@ navLinks.forEach(link => {
         })
         .join("");
 
-      iteration += 0.5;   // smoother reveal speed
+      iteration += 0.15;   // slower reveal
 
       if(iteration >= originalText.length){
         clearInterval(interval);
         link.innerText = originalText;
+        isAnimating = false;
       }
 
-    }, 20);  // faster frame rate for premium feel
+    }, 40);   // slower frame timing for smoothness
 
   });
 
@@ -505,5 +510,6 @@ navLinks.forEach(link => {
 
 </body>
 </html>
+
 
 
