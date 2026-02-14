@@ -19,22 +19,24 @@
 }
 
 /* ============================= */
-/* 📱 MOBILE RESPONSIVE FIX ONLY */
+/* 📱 CLEAN MOBILE OPTIMIZATION */
 /* ============================= */
 
 @media (max-width: 768px){
 
+  /* NAV */
   nav{
     padding:14px 20px;
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
   }
 
   nav div:last-child{
     margin-top:10px;
     display:flex;
     flex-wrap:wrap;
-    gap:12px;
+    justify-content:center;
+    gap:14px;
   }
 
   nav a{
@@ -42,14 +44,33 @@
     font-size:14px;
   }
 
+  /* SECTIONS */
   .section{
-    padding:90px 24px;
+    padding:90px 22px;
   }
 
+  .section h2{
+    text-align:center !important;
+    font-size:34px !important;
+  }
+
+  .section p{
+    text-align:center !important;
+  }
+
+  /* HERO */
   .hero{
     grid-template-columns:1fr;
     gap:40px;
     text-align:center;
+  }
+
+  .hero h1{
+    font-size:40px !important;
+  }
+
+  .hero p{
+    font-size:15px;
   }
 
   .hero-img-wrapper{
@@ -57,48 +78,55 @@
   }
 
   .hero-img-wrapper img{
-    max-width:280px;
+    max-width:260px;
   }
 
-  .profile-footer{
-    padding:14px;
-  }
-
+  /* GRID FIX */
   .grid{
     grid-template-columns:1fr;
-    gap:24px;
+    gap:26px;
   }
 
+  /* EXPERIENCE FIX */
   .exp-wrapper{
-    padding-left:35px;
+    padding-left:20px;
   }
 
   .exp-wrapper::before{
-    left:10px;
+    left:5px;
   }
 
   .exp-dot{
-    left:3px;
+    left:-2px;
+    width:14px;
+    height:14px;
+  }
+
+  .card{
+    padding:26px;
   }
 
   .timeline li{
-    padding-left:22px;
+    padding-left:20px;
     font-size:14px;
+    line-height:1.6;
   }
 
+  /* SOCIAL ICONS */
   .social-icons{
-    gap:14px;
+    gap:16px;
   }
 
   .social-icons a{
-    width:45px;
-    height:45px;
+    width:48px;
+    height:48px;
     font-size:18px;
   }
 
   footer{
     padding:40px 20px;
     font-size:13px;
+    text-align:center;
   }
 }
 
@@ -598,6 +626,7 @@ navLinks.forEach(link => {
  
 </body>
 </html>
+
 
 
 
