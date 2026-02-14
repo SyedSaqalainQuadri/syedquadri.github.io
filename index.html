@@ -560,16 +560,64 @@ footer{
 <footer>
  © 2026 Syed Saqalain Quadri · Built with passion for DevOps
 
+<!-- PREMIUM DEVOPS BACKGROUND -->
+<style>
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:linear-gradient(
+    120deg,
+    #050814,
+    #0b1022,
+    #0d1a35,
+    #0b1022,
+    #050814
+  );
+  background-size:400% 400%;
+  animation:gradientFlow 25s ease infinite;
+}
+
+@keyframes gradientFlow{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+</style>
+
 <script>
 tsParticles.load("particles",{
- particles:{
-  number:{value:70},
-  color:{value:"#22d3ee"},
-  links:{enable:true,opacity:.15},
-  move:{enable:true,speed:.4}
- }
+  particles:{
+    number:{ value:45 },
+    color:{ value:["#22d3ee","#8b5cf6"] },
+    links:{
+      enable:true,
+      color:"#22d3ee",
+      opacity:0.12,
+      distance:150
+    },
+    move:{
+      enable:true,
+      speed:0.3
+    },
+    size:{
+      value:2
+    },
+    opacity:{
+      value:0.6
+    }
+  },
+  interactivity:{
+    events:{
+      onHover:{ enable:false },
+      onClick:{ enable:false }
+    }
+  },
+  detectRetina:true
 });
 </script>
+
 
 <!-- 🔐 NAVBAR UNIFORM SCRAMBLE (CLICK ONLY – GLOBAL TIMING) 
 <script>
@@ -623,6 +671,7 @@ navLinks.forEach(link => {
  
 </body>
 </html>
+
 
 
 
