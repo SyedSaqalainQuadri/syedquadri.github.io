@@ -462,7 +462,7 @@ tsParticles.load("particles",{
 });
 </script>
 
-<!-- 🔐 UNIFORM NAVBAR SCRAMBLE EFFECT (CLICK ONLY) -->
+<!-- 🔐 NAVBAR UNIFORM SCRAMBLE (CLICK ONLY – GLOBAL TIMING) -->
 <script>
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 const navLinks = document.querySelectorAll("nav a");
@@ -475,13 +475,17 @@ navLinks.forEach(link => {
   link.addEventListener("click", () => {
 
     clearInterval(interval);
+
+    const scrambleDuration = 900; // total animation time (same for all words)
+    const intervalSpeed = 60;     // slower & more visible shuffle
+    const totalFrames = scrambleDuration / intervalSpeed;
     let frame = 0;
-    const duration = 25; // controls smoothness & speed
 
     interval = setInterval(() => {
 
-      // During scramble phase
-      if (frame < duration) {
+      if (frame < totalFrames) {
+
+        // All letters shuffle together
         link.innerText = originalText
           .split("")
           .map(char => {
@@ -489,16 +493,18 @@ navLinks.forEach(link => {
             return letters[Math.floor(Math.random() * letters.length)];
           })
           .join("");
-      } 
-      // Restore full original together
-      else {
+
+      } else {
+
+        // All letters restore together
         clearInterval(interval);
         link.innerText = originalText;
+
       }
 
       frame++;
 
-    }, 40); // higher = slower (smooth premium feel)
+    }, intervalSpeed);
 
   });
 
@@ -507,6 +513,7 @@ navLinks.forEach(link => {
 
 </body>
 </html>
+
 
 
 
