@@ -57,14 +57,19 @@ body{
 }
 
 .cloud{
+ background: red;
  position:absolute;
  width:220px;
- opacity:0.9;
+
  filter:
    invert(1)
    brightness(2)
-   drop-shadow(0 0 30px #22d3ee)
+   contrast(2)
+   drop-shadow(0 0 25px #22d3ee)
    drop-shadow(0 0 60px #8b5cf6);
+
+ opacity:0.9;
+
  animation: float 120s linear infinite,
             breathe 6s ease-in-out infinite alternate;
 }
@@ -83,7 +88,7 @@ body{
 
 @keyframes breathe{
  from{ transform:scale(1); }
- to{ transform:scale(1.06); }
+ to{ transform:scale(1.08); }
 }
 
 /* NAV */
@@ -695,6 +700,7 @@ navLinks.forEach(link => {
  
 </body>
 </html>
+
 
 
 
