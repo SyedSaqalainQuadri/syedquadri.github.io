@@ -9,6 +9,90 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
+/* ============================= */
+/* 📱 MOBILE RESPONSIVE FIX ONLY */
+/* ============================= */
+
+@media (max-width: 768px){
+
+  nav{
+    padding:14px 20px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  nav div:last-child{
+    margin-top:10px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  nav a{
+    margin-left:0;
+    font-size:14px;
+  }
+
+  .section{
+    padding:90px 24px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    gap:40px;
+    text-align:center;
+  }
+
+  .hero-img-wrapper{
+    margin:0 auto;
+  }
+
+  .hero-img-wrapper img{
+    max-width:280px;
+  }
+
+  .profile-footer{
+    padding:14px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  .exp-wrapper{
+    padding-left:35px;
+  }
+
+  .exp-wrapper::before{
+    left:10px;
+  }
+
+  .exp-dot{
+    left:3px;
+  }
+
+  .timeline li{
+    padding-left:22px;
+    font-size:14px;
+  }
+
+  .social-icons{
+    gap:14px;
+  }
+
+  .social-icons a{
+    width:45px;
+    height:45px;
+    font-size:18px;
+  }
+
+  footer{
+    padding:40px 20px;
+    font-size:13px;
+  }
+}
+ 
 <style>
 :root{
  --bg:#050814;
@@ -462,7 +546,7 @@ tsParticles.load("particles",{
 });
 </script>
 
-<!-- 🔐 NAVBAR UNIFORM SCRAMBLE (CLICK ONLY – GLOBAL TIMING) -->
+<!-- 🔐 NAVBAR UNIFORM SCRAMBLE (CLICK ONLY – GLOBAL TIMING) 
 <script>
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 const navLinks = document.querySelectorAll("nav a");
@@ -510,9 +594,11 @@ navLinks.forEach(link => {
 
 });
 </script>
-
+-->
+ 
 </body>
 </html>
+
 
 
 
