@@ -560,61 +560,85 @@ footer{
 <footer>
  © 2026 Syed Saqalain Quadri · Built with passion for DevOps
 
-<!-- PREMIUM DEVOPS BACKGROUND -->
-<style>
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-2;
-  background:linear-gradient(
-    120deg,
-    #050814,
-    #0b1022,
-    #0d1a35,
-    #0b1022,
-    #050814
-  );
-  background-size:400% 400%;
-  animation:gradientFlow 25s ease infinite;
-}
-
-@keyframes gradientFlow{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <script>
-tsParticles.load("particles",{
-  particles:{
-    number:{ value:45 },
-    color:{ value:["#22d3ee","#8b5cf6"] },
-    links:{
-      enable:true,
-      color:"#22d3ee",
-      opacity:0.12,
-      distance:150
-    },
-    move:{
-      enable:true,
-      speed:0.3
-    },
-    size:{
-      value:2
-    },
-    opacity:{
-      value:0.6
-    }
-  },
-  interactivity:{
-    events:{
-      onHover:{ enable:false },
-      onClick:{ enable:false }
-    }
-  },
-  detectRetina:true
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.domElement.style.position = "fixed";
+renderer.domElement.style.top = "0";
+renderer.domElement.style.left = "0";
+renderer.domElement.style.zIndex = "-1";
+document.body.appendChild(renderer.domElement);
+
+camera.position.z = 30;
+
+/* ===== HEX GEOMETRY ===== */
+const hexGeometry = new THREE.CylinderGeometry(2, 2, 0.6, 6);
+const hexMaterial = new THREE.MeshBasicMaterial({
+  color: 0x22d3ee,
+  wireframe: true
+});
+
+const hexes = [];
+
+for (let i = 0; i < 10; i++) {
+  const hex = new THREE.Mesh(hexGeometry, hexMaterial.clone());
+  hex.position.x = (Math.random() - 0.5) * 60;
+  hex.position.y = (Math.random() - 0.5) * 40;
+  hex.position.z = (Math.random() - 0.5) * 30;
+
+  hex.material.color.setHSL(Math.random(), 1, 0.6);
+
+  scene.add(hex);
+  hexes.push(hex);
+}
+
+/* ===== CONNECTION LINES ===== */
+const points = [];
+for (let i = 0; i < 50; i++) {
+  points.push(new THREE.Vector3(
+    (Math.random() - 0.5) * 80,
+    (Math.random() - 0.5) * 60,
+    (Math.random() - 0.5) * 40
+  ));
+}
+
+const geometry = new THREE.BufferGeometry().setFromPoints(points);
+const material = new THREE.LineBasicMaterial({
+  color: 0x22d3ee,
+  transparent: true,
+  opacity: 0.2
+});
+
+const line = new THREE.LineSegments(geometry, material);
+scene.add(line);
+
+/* ===== ANIMATION ===== */
+function animate() {
+  requestAnimationFrame(animate);
+
+  hexes.forEach((hex, i) => {
+    hex.rotation.x += 0.002;
+    hex.rotation.y += 0.003;
+    hex.position.y += Math.sin(Date.now() * 0.001 + i) * 0.002;
+  });
+
+  line.rotation.y += 0.0008;
+
+  renderer.render(scene, camera);
+}
+
+animate();
+
+/* ===== RESPONSIVE ===== */
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
 });
 </script>
 
@@ -671,6 +695,7 @@ navLinks.forEach(link => {
  
 </body>
 </html>
+
 
 
 
