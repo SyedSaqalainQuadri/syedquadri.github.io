@@ -19,20 +19,20 @@
 }
 
 /* ============================= */
-/* 📱 PERFECT MOBILE LAYOUT FIX */
+/* 📱 CLEAN MOBILE LAYOUT FIX */
 /* ============================= */
 
 @media (max-width: 768px){
 
   /* NAV */
   nav{
-    padding:16px 20px;
+    padding:18px 20px;
     flex-direction:column;
     align-items:center;
   }
 
   nav div:last-child{
-    margin-top:12px;
+    margin-top:14px;
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
@@ -40,51 +40,57 @@
   }
 
   nav a{
-    margin-left:0;
-    font-size:14px;
+    margin:0;
+    font-size:15px;
   }
 
   /* SECTION SPACING */
   .section{
-    padding:90px 22px;
+    padding:100px 24px;
+    text-align:center;
   }
 
   /* FORCE ALL SECTION HEADINGS CENTER */
   .section h2{
     text-align:center !important;
     font-size:34px !important;
+    line-height:1.2;
   }
 
   .section p{
-    text-align:center !important;
+    max-width:95%;
+    margin:16px auto 0 auto;
   }
 
   /* HERO FIX */
   .hero{
     grid-template-columns:1fr;
-    gap:30px;
     text-align:center;
+    gap:50px;
   }
 
-  /* PROFILE IMAGE ON TOP */
   .hero-img-wrapper{
-    order:-1;
-    margin:0 auto 20px auto;
-    max-width:260px;
+    order:-1; /* image on top */
+    margin:0 auto;
   }
 
   .hero-img-wrapper img{
     max-width:260px;
   }
 
-  .profile-footer{
-    text-align:center;
+  .hero h1{
+    font-size:40px !important;
+  }
+
+  .hero div[style*="display:flex"]{
+    justify-content:center;
+    flex-wrap:wrap;
   }
 
   /* GRID FULL WIDTH */
   .grid{
     grid-template-columns:1fr;
-    gap:26px;
+    gap:30px;
   }
 
   /* EXPERIENCE FIX */
@@ -101,37 +107,25 @@
     display:none;
   }
 
-  /* EXPERIENCE CARDS FULL WIDTH */
-  #experience .card{
+  .card{
     width:100%;
-    padding:28px;
   }
 
   .timeline li{
-    padding-left:0;
-    font-size:14px;
+    padding-left:18px;
+    text-align:left;
   }
 
-  .timeline li::before{
-    display:none;
-  }
-
-  /* BUTTON STACK */
-  .hero div[style*="display:flex"]{
-    flex-direction:column;
-    align-items:center;
-  }
-
-  /* SOCIAL ICONS */
+  /* CONTACT */
   .social-icons{
-    gap:18px;
+    justify-content:center;
   }
 
   footer{
     padding:40px 20px;
-    font-size:13px;
   }
 }
+
 
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -630,6 +624,7 @@ navLinks.forEach(link => {
  
 </body>
 </html>
+
 
 
 
