@@ -48,10 +48,14 @@ body{
  content:"";
  position:absolute;
  inset:0;
- background-image:radial-gradient(white 1px, transparent 1px);
- background-size:3px 3px;
- opacity:.05;
+ background:
+  radial-gradient(circle at 10% 20%, rgba(255,255,255,.4) 1px, transparent 1px),
+  radial-gradient(circle at 40% 80%, rgba(255,255,255,.3) 1px, transparent 1px),
+  radial-gradient(circle at 70% 30%, rgba(255,255,255,.4) 1px, transparent 1px),
+  radial-gradient(circle at 90% 60%, rgba(255,255,255,.3) 1px, transparent 1px);
+ opacity:.2;
 }
+
 
 .cloud{
  position:absolute;
@@ -631,7 +635,13 @@ document.addEventListener("mousemove", e=>{
  const y = (e.clientY / window.innerHeight - 0.5) * 20;
 
  clouds.forEach((cloud, index)=>{
-   cloud.style.transform += ` translate(${x*(index+1)/8}px, ${y*(index+1)/8}px)`;
+  document.addEventListener("mousemove", e=>{
+ const x = (e.clientX / window.innerWidth - 0.5) * 20;
+ const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+ clouds.forEach((cloud, index)=>{
+   const depth = (index+1)/8;
+   cloud.style.transform = `translate(${x*depth}px, ${y*depth}px)`;
  });
 });
 </script>
@@ -688,4 +698,5 @@ navLinks.forEach(link => {
  
 </body>
 </html>
+
 
